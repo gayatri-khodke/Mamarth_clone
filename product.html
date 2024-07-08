@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mamarth home page</title>
     <link rel='stylesheet' href="home.css">
+    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="carousel/carousel.css">
     <script src="https://kit.fontawesome.com/20945cdd74.js" crossorigin="anonymous"></script></head>
 
 </head>
@@ -59,5 +61,45 @@
             <img src="https://images.mamaearth.in/wysiwyg/18-04-2023/Desktop_T_C.jpg">
         </div>
     </section>
+    <h1 id="hurryup"><i class="fa-solid fa-bars"></i>Hurry Up!<i class="fa-solid fa-bars"></i></h1>
+    <h3 id="expireoffer">Offer will expire soon</h3>
+    <!-- carosel -->
+    <div class="slideshow-container">
+        <div class="myslide fade">
+          <img
+          src="https://images.mamaearth.in/wysiwyg/OMG_JAN/web_hc.jpg?fit=scale&w=&h=&q="
+          alt="Slide 1"
+          />
+        </div>
+        <div class="myslide fade">
+          <img
+          src="https://images.mamaearth.in/wysiwyg/OMG_JAN/web_cr.jpg?fit=scale&w=&h=&q="
+          alt="Slide 2"
+          />
+        </div>
+        <div class="myslide fade">
+          <img
+          src="https://images.mamaearth.in/wysiwyg/OMG_JAN/web_sc.jpg?fit=scale&w=&h=&q="
+          alt="Slide 3"
+          />
+        </div>
+        <button class="prev" onclick="plusSlides(-1)">
+          <img src="https://images.mamaearth.in/svg/chevron-left-white.svg" alt="Prev" class="icon" />
+        </button>
+        <button class="next" onclick="plusSlides(1)">
+          <img src="https://images.mamaearth.in/svg/chevron-right-white.svg" alt="Next" class="icon" />
+        </button>
+      </div>
+  
+  
+    <!-- carosel -->
+    <section class="faq-section">
+        <div class="faq-wraper">
+                
+            </div>
+    </section>
+
+    <script src="product.js"></script>
+    <script src="carousel/carousel.js"></script>
 </body>
 </html>
