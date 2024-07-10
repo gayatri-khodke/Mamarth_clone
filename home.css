@@ -145,15 +145,78 @@ body {
     display:flex;
     justify-content:center;
     align-items:center;
-    border:2px solid blue;
 }
 iframe, .show-info{
     width:35%;
-    height:300px;
-    border:2px solid pink;
+    height:400px;
+    font-family: "Open Sans", sans-serif;
+}
+.show-info h3{
+    margin:0.6rem auto;
+    font-size:1.3rem;
+}
+.show-info{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    padding:0px 1rem;
+}
+.show-btn{
+    margin:1rem;
+}
+.show-btn .shop-btn, .pledge-btn{
+    display: inline-block;
+    position: relative;
+    padding: 10px;
+    border-radius: 5px;
+    background: rgb(0, 175, 239);
+    margin-left: 5px;
+    margin-right: 5px;
+    color: rgb(255, 255, 255);
+    font-size: 0.8rem;
+    border:none;
+}
+.pledge-btn{
+    color:rgb(0, 175, 239);
+    border:1px solid rgb(0, 175, 239);
+    background:none;
 }
 
-
+.section4 {
+    position:relative;
+    width: 100%;
+    height: 400px; 
+    background-image: url("https://images.mamaearth.in/wysiwyg/Mobile_home_img.png?format=auto");
+    background-repeat: no-repeat; 
+    background-size:contain; 
+}
+.section4 img{
+    width:100%;
+    height:100%;
+}
+.showinfo{
+    position:absolute;
+    left:35%;
+    top:30%;
+    font-size:1.2rem;
+    color:rgb(29, 29, 29);
+    width:auto;
+    text-align:center;
+}
+.showinfo h3{
+    color:rgb(130, 195, 65);
+    letter-spacing: 0.36rem;
+    font-size:2.25rem;
+}
+.showinfo button{
+    background-image: url(https://images.mamaearth.in/wysiwyg/desktop_cta2x.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    min-width: 177px;
+    min-height: 40px;
+    border:none;
+}
 @media (max-width:950px){
     .nav1 .ul1, .ul2{
         width:30%;
@@ -171,12 +234,29 @@ iframe, .show-info{
         width:100px;
     }
 }
+@media (max-width:890px){
+    .goodness-section{
+        width:100%;
+    }
+    iframe,.show-info{
+        width:45%;
+    }
+}
 @media (max-width:700px){
     .nav2 ul{
         width:100%;
     }
     .nav2 .sub-navul li{
         font-size:0.7rem;
+    }
+    .goodness-section{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-direction:column;
+    }
+    iframe,.show-info{
+        width:80%;
     }
 
 }
