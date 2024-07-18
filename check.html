@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       #products-container {
+    width: 90%;
+    margin: auto;
+    height: 500px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    border: 2px solid blue;
+    overflow-x: scroll;
+    scroll-behavior: smooth; 
+    background-color: white; 
+}
+.showproduct1{
+    width: 70%;
+    margin: auto;
+    border:2px solid gray;
+}
+
+.arrow-left, .arrow-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    color: black;
+    background-color: white; 
+    border: 2px solid blue;
+    padding: 0.5rem;
+    cursor: pointer; 
+    z-index: 10; 
+    visibility: visible; 
+    opacity: 1; 
+}
+
+.arrow-left {
+    left: -0.4rem;
+}
+
+.arrow-right {
+    right: -0.4rem;
+}
+
+.product-wraper {
+    position: relative;
+    min-width: 260px;
+    height: 480px;
+    border: 1px solid gray;
+    text-align: center;
+    padding: 0.5rem 0.4rem;
+    margin: 0.5rem 0.6rem;
+}
+
+.product-wraper img {
+    width: 95%;
+    margin: auto;
+    height: 250px;
+}
+
+.product-wraper h4, p, h2 {
+    margin: 0.4rem 0px;
+}
+
+.product-wraper p {
+    color: rgb(114, 114, 114);
+}
+
+.product-wraper h4 {
+    font-family: "Open Sans", sans-serif;
+    color: rgb(47, 46, 46);
+}
+
+.product-wraper h5 {
+    color: rgb(75, 139, 11);
+    font-family: "Open Sans", sans-serif;
+}
+
+.product-wraper .fa-star {
+    color: rgb(255, 195, 0);
+}
+
+.product-wraper .fa-circle-check {
+    color: green;
+}
+
+.product-wraper button {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding: 0.7rem;
+    display: inline-block;
+    width: 100%;
+    color: #fff;
+    background-color: rgb(0, 175, 239);
+    border: none;
+    cursor: pointer;
+}
+
+
+.productheading1 {
+    margin: 2rem auto 0.4rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    height: 70px;
+    border-radius: 10px 10px 0px 0px;
+    background-image: url("https://images.mamaearth.in/wysiwyg/sky_strip_mobile2x.png?format=autot");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sub-pro-heading {
+    width: 35%;
+    height: 100%;
+    background-image: url("https://images.mamaearth.in/wysiwyg/red_tag_desktop2x.png");
+    background-repeat: no-repeat;
+    padding-top: 0.15em;
+    background-size: cover;
+    display: inline-block;
+    width: 224.9px;
+    height: 46.71px;
+    color: rgb(255, 255, 255);
+    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: 0.25px;
+    border: none;
+}
+
+@media (max-width: 900px) {
+    .showproduct1, .productheading1 {
+        width: 94%;
+    }
+
+    .product-wraper {
+        width: 230px;
+    }
+}
+
+    </style>
+    <script src="https://kit.fontawesome.com/20945cdd74.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section class="showproduct1">
+        <div id="products-container">
+            <!-- Products will be dynamically inserted here -->
+            <script src="productdata.js"></script>
+        </div>
+        <i class="fa-solid fa-chevron-left arrow-left" onclick="scrollProducts('left')"></i>
+        <i class="fa-solid fa-chevron-right arrow-right" onclick="scrollProducts('right')"></i>
+    </section>
+
+    <script>
+        function scrollProducts(direction) {
+            const container = document.getElementById('products-container');
+            const scrollAmount = 300; 
+            if (direction === 'left') {
+                container.scrollBy({
+                    left: -scrollAmount,
+                    behavior: 'smooth'
+                });
+            } else if (direction === 'right') {
+                container.scrollBy({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    </script>
+</body>
+</html>

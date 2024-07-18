@@ -45,7 +45,6 @@ body {
 .nav1 .offerlogo {
     width: 130px;
 }
-
 .searchbardiv {
     display: flex;
     align-items: center;
@@ -98,6 +97,9 @@ body {
     padding:0.4rem;
     border-radius:5px;
     color:#fff;
+}
+.showfileicon{
+    display:block;
 }
 .nav2{
     width:100%;
@@ -217,6 +219,208 @@ iframe, .show-info{
     min-height: 40px;
     border:none;
 }
+/* Product container css */
+.main-container-wraper{
+    width: 70%;
+    margin: auto;
+    /* border:2px solid red; */
+}
+#products-container{
+    width: 100%;
+    margin: auto;
+    height: 500px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    scroll-behavior: smooth; 
+    background-color: white; 
+    /* border:2px solid orange; */
+}
+#products-container::-webkit-scrollbar {
+    display: none; 
+}
+.showproduct1{
+    position:relative;
+    width:100%;
+    margin: auto;
+}
+
+.arrow-left, .arrow-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.4rem;
+    color: rgb(87, 86, 86);
+    background-color: white; 
+    padding: 0.5rem;
+    cursor: pointer; 
+    z-index: 10; 
+    visibility: visible; 
+    opacity: 1; 
+}
+
+.arrow-left {
+    left: -2.8rem;
+}
+
+.arrow-right {
+    right: -2.8rem;
+}
+
+.product-wraper {
+    position: relative;
+    min-width: 260px;
+    height: 480px;
+    border: 1px solid gray;
+    text-align: center;
+    padding: 0.5rem 0.4rem;
+    margin: 0.5rem 0.6rem;
+}
+
+.product-wraper img {
+    width: 95%;
+    margin: auto;
+    height: 250px;
+}
+
+.product-wraper h4, p, h2 {
+    margin: 0.4rem 0px;
+}
+
+.product-wraper p {
+    color: rgb(114, 114, 114);
+}
+
+.product-wraper h4 {
+    font-family: "Open Sans", sans-serif;
+    color: rgb(47, 46, 46);
+}
+
+.product-wraper h5 {
+    color: rgb(75, 139, 11);
+    font-family: "Open Sans", sans-serif;
+}
+
+.product-wraper .fa-star {
+    color: rgb(255, 195, 0);
+}
+
+.product-wraper .fa-circle-check {
+    color: green;
+}
+
+.product-wraper button {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding: 0.7rem;
+    display: inline-block;
+    width: 100%;
+    color: #fff;
+    background-color: rgb(0, 175, 239);
+    border: none;
+    cursor: pointer;
+}
+
+
+.productheading1 {
+    margin: 2rem auto 0.4rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    height: 70px;
+    border-radius: 10px 10px 0px 0px;
+    background-image: url("https://images.mamaearth.in/wysiwyg/sky_strip_mobile2x.png?format=autot");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sub-pro-heading {
+    width: 35%;
+    height: 100%;
+    background-image: url("https://images.mamaearth.in/wysiwyg/red_tag_desktop2x.png");
+    background-repeat: no-repeat;
+    padding-top: 0.15em;
+    background-size: cover;
+    display: inline-block;
+    width: 224.9px;
+    height: 46.71px;
+    color: rgb(255, 255, 255);
+    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: 0.25px;
+    border: none;
+}
+.vertical_nav {
+    position: absolute;
+    top: 2.8rem;
+    left: 0rem;
+    width: 34%;
+    height: 93vh;
+    text-align: center;
+    background-color: #fff;
+    z-index: 14;
+    display: none;
+}
+
+.vertical_nav .profileimage{
+    border:2px solid skyblue;
+    background-color:skyblue;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.vertical_nav .profileimage img{
+    border-radius:50%;
+    border:2px solid blue;
+    width:100px;
+    height:100px;
+    margin-right:1rem;
+}
+.vertical_nav ul{
+    width:100%;
+    margin:auto;
+    background-color:#fff;
+}
+.vertical_nav ul li{
+    text-align:left;
+    list-style-type:none;
+    margin:1rem 0rem 0rem 1.7rem;
+    cursor:pointer;
+}
+.show_searched_product{
+    width:70%;
+    margin:auto;
+    height:auto;
+    /* border:2px solid rgb(171, 8, 8); */
+}
+.wrap_searched_product{
+    width:100%;
+    height:auto;
+    display:flex;
+    flex-wrap:wrap;
+}
+.wrap_searched_product .product-wraper{
+    max-width:210px;
+    height:470px;
+}
+
+@media (max-width: 900px) {
+    .showproduct1, .productheading1 {
+        width: 94%;
+    }
+
+    .product-wraper {
+        width: 230px;
+    }
+}
+
+/* end */
+
 @media (max-width:950px){
     .nav1 .ul1, .ul2{
         width:30%;
@@ -258,7 +462,11 @@ iframe, .show-info{
     iframe,.show-info{
         width:80%;
     }
-
+}
+@media (max-width:600px){
+    .vertical_nav{
+        width:45%;
+    }
 }
 @media (max-width: 480px) {
     .nav1 {

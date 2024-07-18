@@ -60,90 +60,62 @@
     color:rgb(43, 42, 42);
 }
 
-.showproduct1{
+.new-launches-product-wrapper{
+    width:100%;
+    margin:auto;
+    border:none;
+}
+.main-container-wraper{
+    width: 79%;
+    margin: auto;
+    /* border:2px solid red; */
+}
+.new-launches-header{
     width:75%;
     margin:auto;
-    height:auto;
+}
+.new-launches-header ul li{
+    cursor:pointer;
+}
+#products-container{
+    width: 100%;
+    margin: auto;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: white; 
+    /* border:2px solid orange; */
+}
+.product-wraper {
+    position: relative;
+    max-width: 260px;
+    height: 480px;
+    border: 1px solid gray;
+    text-align: center;
+    padding: 0.5rem 0.4rem;
+    margin: 0.5rem 0.6rem;
+}
+.new-launches-product-wrapper ul{
     display:flex;
     justify-content:flex-start;
-    align-items:center;
-    flex-flow:wrap;
 }
-.product-wraper{
-    position:relative;
-    width:260px;
-    height:450px;
-    border:1px solid gray;
-    text-align:center;
-    padding:0.5rem 0.4rem;
-    margin:0.5rem 0.6rem;
+.new-launches-product-wrapper h2 span{
+    float:right;
+    margin-right:2rem;
+    color:rgb(0, 175, 239);
 }
-.product-wraper img{
-    width:95%;
-    margin:auto;
-    height:250px;
-    /* border:2px solid gray; */
+.new-launches-product-wrapper ul li{
+    list-style-type:none;
+    padding:0.2rem 1rem;
+    margin-right:0.6rem;
+    border:2px solid gray;
+    border-radius:15px;
 }
-.product-wraper h4,p,h2{
-    margin:0.4rem 0px;
-}
-.product-wraper p{
-    color:rgb(114, 114, 114);
-}
-.product-wraper h4{
-    font-family: "Open Sans", sans-serif;
-    color:rgb(47, 46, 46);
-}
-.product-wraper h5{
-    color:rgb(75, 139, 11);
-    font-family:"Open Sans", sans-serif;
-}
-.product-wraper .fa-star{
-    color:rgb(255, 195, 0);
-}
-.product-wraper .fa-circle-check{
-    color:green;
-}
-.product-wraper button{
-    position:absolute;
-    bottom:0px;
-    left:0px;
-    padding:0.7rem;
-    display:inline-block;
-    width:100%;
-    color:#fff;
-    background-color:rgb(0, 174, 239);
-    border-radius:5px;
-    font-size:1rem;
-    border:none;
-}
-.productheading1{
-    margin:2rem auto 0.4rem auto;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    width:75%;
-    height:70px;
-    border-radius: 10px 10px 0px 0px;
-    background-image: url("https://images.mamaearth.in/wysiwyg/sky_strip_mobile2x.png?format=autot");
-    background-repeat: no-repeat;
-    background-size:cover;
-}
-.sub-pro-heading{
-    width:35%;
-    height:100%;
-    background-image: url("https://images.mamaearth.in/wysiwyg/red_tag_desktop2x.png");
-    background-repeat: no-repeat;
-    padding-top: 0.15em;
-    background-size: cover;
-    display: inline-block;
-    width: 224.9px;
-    height: 46.71px;
-    color: rgb(255, 255, 255);
-    font-size: 1.25rem;
-    font-weight: 500;
-    letter-spacing: 0.25px;
-    border:none;
+.new-launches-product-wrapper ul li:hover{
+    border-color:rgb(0, 175, 239);
+    color:rgb(0, 175, 239);
 }
 @media (max-width:900px){
     .showproduct1,.productheading1{

@@ -25,6 +25,9 @@ const questionsArray = [
     }
 ];
 
+
+
+
 const faqWrapper = document.querySelector('.faq-wraper');
 
 function displayQuestions() {

@@ -8,14 +8,14 @@
     <link rel='stylesheet' href="home.css">
     <link rel="stylesheet" href="footer/footer.css">
     <link rel="stylesheet" href="carousel/carousel.css">
-
+    <script defer src="productdata.js"></script>
     <script src="https://kit.fontawesome.com/20945cdd74.js" crossorigin="anonymous"></script>
     
 </head>
 <body>
     <nav class="nav1">
         <ul class="ul1">
-            <li><i class="fa-solid fa-bars"></i></li>
+            <li><i class="fa-solid fa-bars" onclick="displaysidebar()"></i></li>
             <li><img class="mamarthlogo" src="	https://images.mamaearth.in/wysiwyg/mamaearth-logo.png?format=auto&fit=scale"></li>
             </ul>
             <ul class="ul2">
@@ -34,7 +34,7 @@
     </nav>
     <div class="searchbar">
         <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" placeholder="Search">
+        <input type="text" placeholder="Search" id="userinput" onclick="showSearchedData()">
         <span class="searchbtn"><i class="fa-solid fa-magnifying-glass"></i>Search</span>
     </div>
     <nav class="nav2">
@@ -100,6 +100,83 @@
             <img src="https://images.mamaearth.in/wysiwyg/18-04-2023/Desktop_T_C.jpg">
         </div>
     </section>
+    <!-- sidebar -->
+     <aside class="vertical_nav">
+        <div class="profileimage">
+            <img src=" " >
+            <div>
+                <h3>Hello User</h3>
+                <h3>Log in</h3>
+            </div>
+        </div>
+            <ul>
+                <li>HOME</li>
+                <li>FACE</li>
+                <li>HEAIR</li>
+                <li>MACKEUP</li>
+                <li>BODY</li>
+                <li>BABY</li>
+                <li>COMBO</li>
+                <li>NEW LAUNCHES</li>
+                <li>ALL PRODUCTS</li>
+                <li>PLANT GOODNESS</li>
+                <li>STORE LOCATOR</li>
+            </ul>
+     </aside>
+     <!-- sidebar end -->
+<!-- Best Sellers -->
+<section class="parentsection">
+<section class="main-container-wraper best-sellers">
+    <h2>Best Sellers</h2>
+    <p>Explore best-selling safe, natural, and 100% toxin-free baby and beauty products from Mamaearth. Get amazing deals and start your toxin-free skin, hair, and baby care journey.</p>
+    <section class="showproduct1">
+        <div class="best-sellers-container" id="products-container">
+            <!-- Products will be dynamically inserted here -->
+        </div>
+        <i class="fa-solid fa-chevron-left arrow-left" onclick="scrollProducts('best-sellers-container', 'left')"></i>
+        <i class="fa-solid fa-chevron-right arrow-right" onclick="scrollProducts('best-sellers-container', 'right')"></i>
+    </section>
+</section>
+
+<!-- Hair Care Products -->
+<section class="main-container-wraper hair-care">
+    <h2>Hair Care</h2>
+    <p>Explore best-selling safe, natural, and 100% toxin-free hair products from Mamaearth. Get amazing deals and start your toxin-free hair care journey.</p>
+    <section class="showproduct1">
+        <div class="hair-care-container" id="products-container">
+            <!-- Hair care products will be dynamically inserted here -->
+        </div>
+        <i class="fa-solid fa-chevron-left arrow-left" onclick="scrollProducts('hair-care-container', 'left')"></i>
+        <i class="fa-solid fa-chevron-right arrow-right" onclick="scrollProducts('hair-care-container', 'right')"></i>
+    </section>
+</section>
+
+<!-- skin Care Products -->
+<section class="main-container-wraper baby-care">
+    <h2>Skin Care</h2>
+    <p>Explore best-selling safe, natural, and 100% toxin-free hair products from Mamaearth. Get amazing deals and start your toxin-free hair care journey.</p>
+    <section class="showproduct1">
+        <div class="skin-care-container" id="products-container">
+            <!-- Hair care products will be dynamically inserted here -->
+        </div>
+        <i class="fa-solid fa-chevron-left arrow-left" onclick="scrollProducts('skin-care-container', 'left')"></i>
+        <i class="fa-solid fa-chevron-right arrow-right" onclick="scrollProducts('skin-care-container', 'right')"></i>
+    </section>
+</section>
+
+<!-- Vitamin c  range Products -->
+<section class="main-container-wraper vitamin-c-care">
+    <h2>Vitamin C Range</h2>
+    <p>Explore best-selling safe, natural, and 100% toxin-free hair products from Mamaearth. Get amazing deals and start your toxin-free hair care journey.</p>
+    <section class="showproduct1">
+        <div class="vitamin-c-container" id="products-container">
+            <!-- Hair care products will be dynamically inserted here -->
+        </div>
+        <i class="fa-solid fa-chevron-left arrow-left" onclick="scrollProducts('vitamin-c-container', 'left')"></i>
+        <i class="fa-solid fa-chevron-right arrow-right" onclick="scrollProducts('vitamin-c-container', 'right')"></i>
+    </section>
+</section>
+
     <section class="goodness-section">
         <iframe src="https://www.youtube.com/embed/YROZybuYGUE" title="Goodness Inside: Its all in the little choices we make everyday #Mamaearth #NaturalIngredients" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
             <div class="show-info">
@@ -123,17 +200,23 @@
             <button></button>
         </div>
     </section>
+</section>
+<section class="show_searched_product">
+    <h2 id="resultarray"></h2>
+    <div class="wrap_searched_product">
+    </div>
+</section>
     <footer>
         <div class="footer-container">
             <div class="footer-top">
                 <div class="container">
                     <div class="sub-container">
                         <div class="shipping">
-                            <img class="delivery" src="Image/freeDelivery.jpg" alt="Free Shipping">
+                            <!-- <img class="delivery" src="Image/freeDelivery.jpg" alt="Free Shipping"> -->
                             <p>Free Shipping<br>On Orders Above Rs. 399</p>
                         </div>
                         <div class="cod">
-                            <img class="cod-img" src="Image/cod-available.jpg" alt="COD Available">
+                            <!-- <img class="cod-img" src="Image/cod-available.jpg" alt="COD Available"> -->
                             <p>COD Available<br>@ Rs. 40 Per Order</p>
                         </div>
                     </div>
@@ -147,7 +230,7 @@
             <div class="footer-middle">
                 <div class="payment">
                     <p>100% Payment Protection, Easy Return Policy</p>
-                    <img src="https://images.mamaearth.in/png/web-payments.png" alt="Payment Methods">
+                    <!-- <img src="https://images.mamaearth.in/png/web-payments.png" alt="Payment Methods"> -->
                 </div>
             </div>
 
@@ -189,7 +272,7 @@
                         </ul>
                     </div>
                     <div class="best-brands">
-                        <img height="250px" width="180" src="Image/Best-Brands.webp" alt="Best Brands 2019">
+                        <!-- <img height="250px" width="180" src="Image/Best-Brands.webp" alt="Best Brands 2019"> -->
                     </div>
                 </div>
             </div>
@@ -205,8 +288,8 @@
                         <a href="mailto:info@example.com"><i class="fa fa-envelope"></i></a>
                     </div>
                     <div class="mobile-app">
-                        <a href="https://play.google.com/store"><img src="Image/google-play.png" alt="Google Play"></a>
-                        <a href="https://www.apple.com/app-store"><img style="height: 80px; width: 150px;" src="Image/app-store1.png" alt="App Store"></a>
+                        <!-- <a href="https://play.google.com/store"><img src="Image/google-play.png" alt="Google Play"></a> -->
+                        <!-- <a href="https://www.apple.com/app-store"><img style="height: 80px; width: 150px;" src="Image/app-store1.png" alt="App Store"></a> -->
                     </div>
                 </div>
                 <div class="footer-copy">
