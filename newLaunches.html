@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mamarth landing page</title>
+    <title>new launch products</title>
     <link rel='stylesheet' href="home.css">
-    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="bestseller.css">
     <link rel="stylesheet" href="footer/footer.css">
     <link rel="stylesheet" href="carousel/carousel.css">
+    <script defer src="productdata.js"></script>
     <script src="https://kit.fontawesome.com/20945cdd74.js" crossorigin="anonymous"></script>
 </head>
 
@@ -38,24 +39,26 @@
     </nav>
     <div class="searchbar">
         <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" placeholder="Search">
+        <input type="text" placeholder="Search" id="userinput" onclick="showSearchedData()">
         <span class="searchbtn"><i class="fa-solid fa-magnifying-glass"></i>Search</span>
     </div>
     <nav class="nav2">
         <ul class="sub-navul">
-            <li>HOME</li>
+           <a href="home.html"><li>HOME</li></a>
             <li>FACE</li>
             <li>HEAIR</li>
             <li>MACKEUP</li>
             <li>BODY</li>
             <li>BABY</li>
             <li>COMBO</li>
-            <li>NEW LAUNCHES</li>
+            <a href="newLaunches.html"><li>NEW LAUNCHES</li></a>
             <li>ALL PRODUCTS</li>
             <li>PLANT GOODNESS</li>
             <li>STORE LOCATOR</li>
         </ul>
     </nav>
+
+    <section class="parentsection">
     <section class="section1">
         <img src="https://images.mamaearth.in/wysiwyg/OMG_JULY/web_live.jpg?fit=scale&w=&h=&q=">
     </section>
@@ -90,7 +93,13 @@
             </section>
         </section>
     </section>
+</section>
 
+    <section class="show_searched_product">
+        <h2 id="resultarray"></h2>
+        <div class="wrap_searched_product">
+        </div>
+    </section>
     <!-- carosel -->
     <section class="faq-section">
         <div class="faq-wraper">
@@ -193,8 +202,7 @@
     </footer>
     <!-- footer end -->
 
-    <script src="product.js"></script>
-    <script src="productdata.js"></script>
+    <script src="bestseller.js"></script>
     <script src="carousel/carousel.js"></script>
 </body>
 

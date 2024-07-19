@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mamarth landing page</title>
+    <title>Best seller</title>
     <link rel='stylesheet' href="home.css">
-    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="bestseller.css">
     <link rel="stylesheet" href="footer/footer.css">
     <link rel="stylesheet" href="carousel/carousel.css">
+    <script defer src="productdata.js"></script>
     <script src="https://kit.fontawesome.com/20945cdd74.js" crossorigin="anonymous"></script></head>
 
 </head>
@@ -15,7 +16,7 @@
     <nav class="nav1">
         <ul class="ul1">
             <li><i class="fa-solid fa-bars"></i></li>
-            <li><img class="mamarthlogo" src="	https://images.mamaearth.in/wysiwyg/mamaearth-logo.png?format=auto&fit=scale"></li>
+            <li><img class="mamarthlogo" src="https://images.mamaearth.in/wysiwyg/mamaearth-logo.png?format=auto&fit=scale"></li>
             </ul>
             <ul class="ul2">
                 <li>
@@ -23,37 +24,39 @@
                 </li>
             <li class="cartdiv">
                 <p></p>
-                <i class="fa-solid fa-cart-shopping"></i>
+                <a href="myorder.html"><i class="fa-solid fa-cart-shopping"></i></a>
                 <span>Cart</span>
             </li>
             <li>
-                <i class="fa-regular fa-user"></i>
+                <a href="login/login.html"><i class="fa-regular fa-user"></i></a>
                 <span>Login</span>
             </li>
         </ul>
     </nav>
     <div class="searchbar">
         <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" placeholder="Search">
+        <input type="text" placeholder="Search" id="userinput" onclick="showSearchedData()">
         <span class="searchbtn"><i class="fa-solid fa-magnifying-glass"></i>Search</span>
     </div>
     <nav class="nav2">
         <ul class="sub-navul">
-            <li>HOME</li>
+           <a href="home.html"><li>HOME</li></a>
             <li>FACE</li>
             <li>HEAIR</li>
             <li>MACKEUP</li>
             <li>BODY</li>
             <li>BABY</li>
             <li>COMBO</li>
-            <li>NEW LAUNCHES</li>
+            <a href="newLaunches.html"><li>NEW LAUNCHES</li></a>
             <li>ALL PRODUCTS</li>
             <li>PLANT GOODNESS</li>
             <li>STORE LOCATOR</li>
         </ul>
     </nav>
+
+    <section class="parentsection">
     <section class="section1">
-        <img src="https://images.mamaearth.in/wysiwyg/OMG_JULY/web_live.jpg?fit=scale&w=&h=&q=">
+        <img src="https://st-images.honasa.in/summer_web_755170b63b.jpg?format=auto&width=&quality=">
     </section>
     <section class="section2">
         <div class="img-div1">
@@ -69,7 +72,7 @@
     <div class="slideshow-container">
         <div class="myslide fade">
           <img
-          src="https://images.mamaearth.in/wysiwyg/OMG_JAN/web_hc.jpg?fit=scale&w=&h=&q="
+          src="https://images.mamaearth.in/wysiwyg/OMG_JAN/web_sc.jpg?fit=scale&w=&h=&q="
           alt="Slide 1"
           />
         </div>
@@ -81,7 +84,7 @@
         </div>
         <div class="myslide fade">
           <img
-          src="https://images.mamaearth.in/wysiwyg/OMG_JAN/web_sc.jpg?fit=scale&w=&h=&q="
+          src="https://images.mamaearth.in/wysiwyg/OMG_JAN/web_hc.jpg?fit=scale&w=&h=&q="
           alt="Slide 3"
           />
         </div>
@@ -98,43 +101,17 @@
         Bestsellers
     </button>
 </div>
-      <!-- <section class="showproduct1">
-        <div class="product-wraper">
-            <img src="https://images.mamaearth.in/catalog/product/u/b/ubtan-face-wash_1_1_2.jpeg?format=auto&width=400&height=400" alt="img">
-            <h4>Ubtan Face Wash with Turmeric & Saffron for Tan Removal – 150 ml</h4>
-            <h5>Removes Tan | Brightens Skin</h5>
-            <p>
-                <i class="fa-solid fa-star"></i>4.5 
-                <i class="fa-solid fa-circle-check"></i> 2300 viewes
-            </p>
-            <h2>rs. 749</h2>
-            <button>ADD TO CART</button>
-        </div>
-        <div class="product-wraper">
-            <img src="https://images.mamaearth.in/catalog/product/u/b/ubtan-face-wash_1_1_2.jpeg?format=auto&width=400&height=400" alt="img">
-            <h4>Ubtan Face Wash with Turmeric & Saffron for Tan Removal – 150 ml</h4>
-            <h5>Removes Tan | Brightens Skin</h5>
-            <p>
-                <i class="fa-solid fa-star"></i>4.5 
-                <i class="fa-solid fa-circle-check"></i> 2300 viewes
-            </p>
-            <h2>rs. 749</h2>
-            <button>ADD TO CART</button>
-        </div>
-      </section> -->
-      
-<!-- Best Seller Products -->
-<section class="main-container-wraper hair-care">
-    <p>Explore best-selling safe, natural, and 100% toxin-free hair products from Mamaearth. Get amazing deals and start your toxin-free hair care journey.</p>
-    <section class="showproduct1">
-        <div class="hair-care-container" id="products-container">
-            <!-- Hair care products will be dynamically inserted here -->
-        </div>
-        <i class="fa-solid fa-chevron-left arrow-left" onclick="scrollProducts('hair-care-container', 'left')"></i>
-        <i class="fa-solid fa-chevron-right arrow-right" onclick="scrollProducts('hair-care-container', 'right')"></i>
-    </section>
 </section>
-
+<!-- Best Seller Products -->
+<section class="parentsection">
+    <section class="main-container-wraper best-sellers">
+        <section class="showproduct1">
+            <div class="best-sellers-container" id="products-container">
+                <!-- Products will be dynamically inserted here -->
+            </div>
+        </section>
+    </section>
+    </section>
 
 <section class="main-product-container">
     <div class="productheading1">
@@ -143,19 +120,36 @@
         </button>
     </div>
 </section>
-
-<section class="main-product-container">
-    <div class="productheading1">
-        <button class="sub-pro-heading">
-            Summer Favorites
-        </button>
-    </div>
+<!-- Hair Care Products -->
+<section class="main-container-wraper hair-care">
+    <section class="showproduct1">
+        <div class="hair-care-container" id="products-container">
+            <!-- Hair care products will be dynamically inserted here -->
+        </div>
+    </section>
 </section>
 
 <section class="main-product-container">
     <div class="productheading1">
         <button class="sub-pro-heading">
             Trending Skin Care
+        </button>
+    </div>
+</section>
+<!-- skin Care Products -->
+<section class="main-container-wraper baby-care">
+    <section class="showproduct1">
+        <div class="skin-care-container" id="products-container">
+            <!-- Hair care products will be dynamically inserted here -->
+        </div>
+    </section>
+</section>
+
+
+<section class="main-product-container">
+    <div class="productheading1">
+        <button class="sub-pro-heading">
+            Summer Favorites
         </button>
     </div>
 </section>
@@ -175,12 +169,17 @@
         </button>
     </div>
 </section>
+</section>
 
-  
+<section class="show_searched_product">
+    <h2 id="resultarray"></h2>
+    <div class="wrap_searched_product">
+    </div>
+</section>
+
     <!-- carosel -->
     <section class="faq-section">
         <div class="faq-wraper">
-                
             </div>
     </section>
     <!-- footer start -->
@@ -278,7 +277,7 @@
     </footer>
     <!-- footer end -->
 
-    <script src="product.js"></script>
+    <script src="bestseller.js"></script>
     <script src="carousel/carousel.js"></script>
 </body>
 </html>
