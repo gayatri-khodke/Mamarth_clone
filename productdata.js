@@ -518,6 +518,9 @@ NewLaunch:"Yes"},
 ]
 
 const filteredArray=[];
+let newArray = JSON.parse(localStorage.getItem('newArray')) || [];
+let item = JSON.parse(localStorage.getItem('item')) || '0';
+
 
 const hairProducts = products.filter(product => product.Tokens.includes('hair'));
 console.log(hairProducts);
@@ -546,7 +549,7 @@ function displayProducts(products, containerId) {
                     <i class="fa-solid fa-circle-check"></i> ${product.Pack_Size} reviews
                 </p>
                 <h2>Rs. ${product.MRP}</h2>
-                <button>ADD TO CART</button>
+            <button onclick="addToCart(this)">ADD TO CART</button>
             </div>
         `;
     });
@@ -643,7 +646,7 @@ function searchedProduct(products) {
                     <i class="fa-solid fa-circle-check"></i> ${product.Pack_Size} reviews
                 </p>
                 <h2>Rs. ${product.MRP}</h2>
-                <button>ADD TO CART</button>
+            <button onclick="addToCart(this)">ADD TO CART</button>
             </div>
         `;
     });
@@ -663,4 +666,34 @@ function displaysidebar() {
     }
 }
 
+function addToCart(buttonElement) {
+    console.log("add to cart:-");
+    console.log(buttonElement);
 
+    // Find the parent element, then find the h4 element within the parent
+    let productWrapper = buttonElement.closest('.product-wraper');
+    let productNameElem = productWrapper.querySelector('h4');
+    let productName = productNameElem.innerText;
+
+    console.log(productName);
+    storeProduct(productName);
+}
+
+function storeProduct(productName) {
+    const product = products.find(p => p.Product_Name === productName);
+    if (product) {
+        const isInArray = newArray.some(p => p.Product_Name === productName);
+        if (!isInArray) {
+            newArray.push(product);
+            console.log(newArray.length-1);
+            localStorage.setItem('newArray', JSON.stringify(newArray));
+        } else {
+            console.log('Product already in newArray');
+        }
+    } else {
+        console.log('Product not found');
+    }
+    localStorage.setItem('item',newArray.length-1);
+    const cartdiv=document.querySelector('.cartdiv p');
+    cartdiv.innerText=item;
+}

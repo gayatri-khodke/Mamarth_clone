@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+        .main_container{
+            width:80%;
+            min-height:400px;
+            margin:auto;
+            display:flex;
+            justify-content:center;
+            align-items:flex-start;
+        }
+        .sub_container1{
+            width:60%;
+        }
+        .product_div{
+            width:100%;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            margin-bottom:0.2rem;
+            border-bottom:1px solid rgb(216, 216, 216);
+        }
+        .product_div img{
+            width:65px;
+            height:65px;
+            margin-right:1rem;
+            border-radius:5px;
+            border:1px solid rgb(216, 216, 216);
+        }
+        .product_div .info{
+            width:80%;
+            text-align:left;
+            display:flex;
+            justify-content:flex-start;
+        }
+        .counter_div{
+            width:20%;
+            height:35px;
+            border:1px solid rgb(216, 216, 216);
+            border-radius:5px;
+            display:flex;
+            justify-content:flex-end;
+        }
+        .counter_div span{
+            display:inline-block;
+            width:32.999%;
+            height:100%;
+            margin:0;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+        .counter_div span:nth-child(2){
+            background-color:rgb(245, 245, 245);
+            border-right:1px solid rgb(216, 216, 216);
+            border-left:1px solid rgb(216, 216, 216);
+        }
+        .sub_container2{
+            margin-top:3rem;
+            width:40%;
+        }
+        .pricediv{
+            width:70%;
+            margin:auto;
+        }
+        .pricediv .calculateprice{
+            width:100%;
+            font-family:"Open Sans", sans-serif;
+        }
+        .calculateprice h5{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            margin:0.5rem 0rem;
+            padding:0.3rem 0rem;
+            color:rgb(104, 103, 103);
+            font-size:1rem;
+        }
+        h5:nth-child(3){
+            border-bottom:1px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <section class="main_container">
+        <div class="sub_container1">
+            <div class="product_div">
+                <div class="info">
+                    <img src=" ">
+                    <div>
+                        <h5>pro name</h5>
+                        <p>price</p>
+                    </div>
+                </div>
+                <div class="counter_div">
+                    <span onclick="removeitem(this)">-</span>
+                    <span>3</span>
+                    <span>+</span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="sub_container2">
+            <div class="pricediv">
+                <h3>Price Summary</h3>
+                <div class="calculateprice">
+                    <h5><span>Order Total</span> <span class="amt total">0</span></h5>
+                    <h5><span>Shipping</span> <span class="amt dis">Free 40ru</span></h5>
+                    <h5><span>5% online payment discount</span> <span class="amt onlinedis">0</span></h5>
+                    <h5><span>To Pay</span> <span class="amt finalamt">0</span></h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // get newArray from localStorage
+        let newArray = JSON.parse(localStorage.getItem('newArray')) || [];
+
+        // render products
+        function renderProducts() {
+            const container = document.querySelector('.sub_container1');
+            container.innerHTML = "";
+            newArray.forEach((e) => {
+                container.innerHTML += `
+                    <div class="product_div">
+                        <div class="info">
+                            <img src="${e.Product_Link}">
+                            <div>
+                                <h5>${e.Product_Name}</h5>
+                                <p>${e.MRP}</p>
+                            </div>
+                        </div>
+                        <div class="counter_div">
+                            <span onclick="removeitem(this)">-</span>
+                            <span>3</span>
+                            <span>+</span>
+                        </div>
+                    </div>`;
+            });
+            updatePriceSummary();
+        }
+
+        // Function to remove an item
+        function removeitem(e) {
+            let parent = e.closest('.product_div');
+            let child = parent.querySelector('.info h5');
+            let element = child.innerText;
+
+            // Find the index of the item to be removed in newArray
+            let index = newArray.findIndex(item => item.Product_Name === element);
+
+            // Remove the item if it exists
+            if (index !== -1) {
+                newArray.splice(index, 1);
+                // Update localStorage with the new array
+                localStorage.setItem('newArray', JSON.stringify(newArray));
+                // Re-render products
+                renderProducts();
+            } else {
+                console.log('Item not found');
+            }
+        }
+
+        function updatePriceSummary() {
+            let total = 0;
+            newArray.forEach(e => {
+                let rs = e.MRP.slice(3).replace(',', '');
+                total += parseFloat(rs);
+            });
+            let discount = total * 5 / 100;
+            let payamount = total - discount - 40;
+
+            let totalamt = document.querySelector('.total');
+            let onlinedis = document.querySelector('.onlinedis');
+            let finalamt = document.querySelector('.finalamt');
+            totalamt.innerText = total.toFixed(2);
+            onlinedis.innerText = discount.toFixed(2);
+            finalamt.innerText = payamount.toFixed(2);
+        }
+
+        // Initial rendering of products and price summary
+        renderProducts();
+    </script>
+</body>
+</html>
